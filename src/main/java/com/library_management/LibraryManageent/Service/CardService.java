@@ -23,19 +23,19 @@ public class CardService {
         libraryCard.setTotal_books_issued(0);
         Date expirydate=new Date(2028,6,1);
         libraryCard.setValidity(expirydate);
-        libraryCard=cardRepository.save(libraryCard);//saving libraryCard object into database after creating details
+        libraryCard=cardRepository.save(libraryCard);
         return "card had been created with card number "+libraryCard.getCard_no();
     }
     public String associate(Integer cardid,Integer studentid)
     {
-      LibraryCard libraryCard=cardRepository.findById(cardid).get();//finding object based on cardid
+      LibraryCard libraryCard=cardRepository.findById(cardid).get();
         Student student=studentRepository.findById(studentid).get();
         libraryCard.setCardstatus(CardStatus.ISSUED);
-        libraryCard.setStudent(student);//indirectly setting foreign key in library card table but because we are playing
+        libraryCard.setStudent(student);
         // with entities, we have to set as per entity
         cardRepository.save(libraryCard);
         return "The card and the student have been associated";
     }
 }
 
-//Object of entity class will always go to database--> (IMPORTANT RULE)
+
