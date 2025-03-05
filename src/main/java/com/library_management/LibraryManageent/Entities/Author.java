@@ -16,7 +16,7 @@ public class Author
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //.IDENTITY increase counter at level of tables, but.AUTO increase counter at database level
+
     private Integer authorid;
     private String name;
     private Integer age;
