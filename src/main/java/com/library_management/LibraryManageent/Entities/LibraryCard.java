@@ -24,7 +24,7 @@ public class LibraryCard
     private CardStatus cardstatus;
     private  int total_books_issued;
     private Date validity;
-    @JoinColumn // this tell us that a new column is to be added in LibraryCard
+    @JoinColumn 
     @OneToOne
     private Student student;
 }
