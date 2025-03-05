@@ -31,9 +31,7 @@ public class BookService
   }
   public  String associate(Integer bookid, Integer authorid) throws Exception
   {
-      //while searching by below way based on given id, if id is not found, then it will throw some exception
-    //  Book book=bookRepository.findById(bookid).get();
-      //so
+     
       Optional<Book> bookOptional=bookRepository.findById(bookid);
       if(bookOptional.isEmpty())
       {
@@ -41,7 +39,6 @@ public class BookService
           throw new Exception("Bookid not found");
       }
       Book book=bookOptional.get();
-     // Author author=authorRepository.findById(authorid).get();
       Optional<Author> authorOptional=authorRepository.findById(authorid);
       if(authorOptional.isEmpty())
       {
