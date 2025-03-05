@@ -30,14 +30,12 @@ public class TransactionService
             throw  new Exception("BookId entered is incorrect");
         }
         Book book=bookOptional.get();
-     //   Book book=bookRepository.findById(bookid).get();
         Optional<LibraryCard> libraryCardOptional=cardRepository.findById(cardid);
         if (libraryCardOptional.isEmpty())
         {
             throw new Exception("CardId entered is wrong");
         }
         LibraryCard libraryCard=libraryCardOptional.get();
-        //LibraryCard libraryCard=cardRepository.findById(cardid).get();
         Transaction transaction=new Transaction();
         transaction.setBook(book);
         transaction.setLibraryCard(libraryCard);
