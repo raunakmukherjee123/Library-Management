@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
     @Autowired
-    private StudentRepository studentRepository;//object of jparepository class, not of studentrepository interface beacuse it is
-    //impossible to create object of interface class
+    private StudentRepository studentRepository;
     public String addStudent(Student student)
     {
         studentRepository.save(student);
