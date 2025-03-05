@@ -27,5 +27,5 @@ public class Book
     private Integer price;
     @JoinColumn
     @ManyToOne
-    private Author author;//foreign key should only be added in child class
+    private Author author;
 }
